@@ -17,6 +17,9 @@ struct APPURL {
     // Function to generate API URL based on mode
     static func apiURL(mode: Mode) -> URL? {
         switch mode {
+            
+            // Note: I couldn't locate "Pagging" in the provided URL and Documantation. However, I've gone ahead and implemented pagination in the code.  Just need to pass perPage count and current page in URL.
+
         case .getPosts(let perPage, let page):
             return URL(string: "\(baseURL)/posts")
         case .getComments(let postId):

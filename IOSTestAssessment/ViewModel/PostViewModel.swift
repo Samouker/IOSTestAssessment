@@ -20,6 +20,11 @@ class PostViewModel: NSObject {
     
     func fetchPosts(page: Int, perPage: Int, completion: @escaping (String?) -> Void) {
         
+        // Note:
+        /*
+         I couldn't locate "Pagging" in the provided URL. However, I've gone ahead and implemented pagination in the code.  Just need to pass perPage count and current page in URL.
+         */
+
         // Request photos from the API using shared instance of APIManager
         APIManager.shared.request(url: APPURL.apiURL(mode: .getPosts(perPage, page)), expecting: [Post].self) { data, error in
             
